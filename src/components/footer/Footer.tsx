@@ -1,4 +1,3 @@
-import React from 'react';
 import Logo from "../../image/logo-footer.svg";
 import desewre from "../../image/desewre.svg";
 import phone from "../../image/phone.svg";

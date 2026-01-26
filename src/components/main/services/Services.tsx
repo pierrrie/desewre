@@ -1,4 +1,3 @@
-import arrow from "../../../image/arrow.svg";
 import web from "../../../image/web.svg";
 import design from "../../../image/design.svg";
 import support from "../../../image/support.svg";
