@@ -1,12 +1,13 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
-interface Mouse {
-  x: number;
-  y: number;
+interface onOpen {
+  onOpen: () => void;
 }
 
-function Order() {
-  const [pos, setPos] = useState<Mouse>({ x: 0, y: 0 });
+function Order({ onOpen }: onOpen) {
+  const [pos, setPos] = useState({ x: 0, y: 0 });
+  const [isHovered, setIsHovered] = useState(false);
+  const orderRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -14,17 +15,28 @@ function Order() {
         x: e.clientX,
         y: e.clientY,
       });
+      
+      // Проверяем, находится ли мышь внутри .order
+      if (orderRef.current) {
+        const rect = orderRef.current.getBoundingClientRect();
+        const isInside = 
+          e.clientX >= rect.left && 
+          e.clientX <= rect.right && 
+          e.clientY >= rect.top && 
+          e.clientY <= rect.bottom;
+        
+        if (isInside !== isHovered) {
+          setIsHovered(isInside);
+        }
+      }
     };
 
     window.addEventListener("mousemove", handleMouseMove);
-
-    return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
-    };
-  }, []);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
+  }, [isHovered]);
 
   return (
-    <section className="order">
+    <section className="order" ref={orderRef}>
       <div className="order__inner">
         <div className="order__content">
           МЫ ВСЕГДА СМОТРИМ НА ИТ - ЗАДАЧИ{" "}
@@ -33,18 +45,21 @@ function Order() {
           DIGITAL И СТРАТЕГИЮ КОМПАНИИ.
         </div>
       </div>
-      <div className="order__btn">
-        <button
-          style={{
-            position: "fixed",
-            left: pos.x,
-            top: pos.y,
-            transform: "translate(-50%, -50%)",
-          }}
-        >
-          Заказать проект
-        </button>
-      </div>
+      {isHovered && (
+        <div className="order__btn">
+          <button
+            style={{
+              position: "fixed",
+              left: pos.x,
+              top: pos.y,
+              transform: "translate(-50%, -50%)",
+            }}
+            onClick={onOpen}
+          >
+            Заказать проект
+          </button>
+        </div>
+      )}
     </section>
   );
 }

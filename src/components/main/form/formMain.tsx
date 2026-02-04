@@ -1,5 +1,9 @@
 
-function FormMain() {
+interface onOpen {
+  onOpen: () => void;
+}
+
+function FormMain({onOpen}: onOpen) {
   return (
     <section className="formMain">
         <div className="formMain__inner">
@@ -8,7 +12,7 @@ function FormMain() {
                 ГОТОВЫ СДЕЛАТЬ НОВЫЙ ПРОЕКТ ВМЕСТЕ?
             </div>
             <div className="formMain__btn">
-                <button>Получить обратную связь</button>
+                <button onClick={onOpen}>Получить обратную связь</button>
             </div>
         </div>
     </section>

@@ -4,15 +4,19 @@ import Cases from "./cases/Cases";
 import Order from "./order/Order";
 import FormMain from "./form/formMain";
 
-function Main() {
+interface onOpen {
+  onOpen: () => void;
+}
+
+function Main({onOpen}: onOpen) {
   return (
     <main>
         <div className="container">
             <About />
-            <Services />
+            <Services onOpen={onOpen} />
             <Cases />
-            <Order />
-            <FormMain />
+            <Order onOpen={onOpen} />
+            <FormMain onOpen={onOpen} />
         </div>
     </main>
   );

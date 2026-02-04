@@ -6,8 +6,8 @@ function HeaderMain() {
     <div className="header__main">
       <div className="header__main__inner">
         <div className="header__inner__logo">
-          <img src={Logo} alt="Лого" />
-          <img src={Desewre} alt="Desewre" />
+          <img className="logo-header" src={Logo} alt="Лого" />
+          <img className="logo-header-text" src={Desewre} alt="Desewre" />
         </div>
         <div className="header__inner__text">
           <span>

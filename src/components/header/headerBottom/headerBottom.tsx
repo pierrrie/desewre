@@ -1,13 +1,17 @@
 import HeaderMessage from "./headerMessage";
-import BtnShow from "../../btn/btnShow";
+import BtnPrice from "../../btn/btnPrice";
+
+interface HeaderBottomProps {
+  onOpen: () => void;
+}
 
 
-function HeaderBottom() {
+function HeaderBottom({onOpen}: HeaderBottomProps) {
   return (
     <div className="container">
         <div className="header__bottom_btn__inner">
             <div className="header__bottom__btn">
-                <BtnShow>Узнать стоимость</BtnShow>
+                <BtnPrice onClick={onOpen}>Узнать стоимость</BtnPrice>
             </div>
             <HeaderMessage />
         </div>

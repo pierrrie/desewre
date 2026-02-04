@@ -12,13 +12,11 @@ function Footer() {
     <footer role="contentinfo" aria-label="Подвал сайта">
       <div className="container">
         <div className="footer__inner">
-          {/* Верхняя часть футера */}
           <div className="footer__top">
-            {/* Логотип и контакты */}
             <div className="footer__logo">
               <div className="footer__img">
                 <a href="/" aria-label="Перейти на главную страницу">
-                  <img src={Logo} alt="Логотип компании" />
+                  <img className="logo_footer" src={Logo} alt="Логотип компании" />
                   <img className='logo-footer' src={desewre} alt="Название компании Desewre" />
                 </a>
               </div>
