@@ -39,7 +39,7 @@ function Order({ onOpen }: onOpen) {
     <section className="order" ref={orderRef}>
       <div className="order__inner">
         <div className="order__content">
-          МЫ ВСЕГДА СМОТРИМ НА ИТ - ЗАДАЧИ{" "}
+          МЫ ВСЕГДА СМОТРИМ НА IT - ЗАДАЧИ{" "}
           <span className="order__color">ЧЕРЕЗ ПРИЗМУ БИЗНЕСА</span> И СТРЕМИМСЯ
           НАЛАДИТЬ ВЗАИМОПОНИМАНИЕ МЕЖДУ РАЗРАБОТКОЙ И ЗАКАЗЧИКОМ, СОЕДИНЯЯ
           DIGITAL И СТРАТЕГИЮ КОМПАНИИ.

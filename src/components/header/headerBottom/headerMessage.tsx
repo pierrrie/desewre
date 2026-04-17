@@ -14,22 +14,54 @@ function HeaderMessage() {
   };
 
 
+  const [ modalIsOpen, modalSetIsOpen ] = useState(false);
+
+  const handleModalToggle = () => {
+    modalSetIsOpen(!modalIsOpen);
+  }
+
+  const handleCloseModal = () => {
+    modalSetIsOpen(false);
+  };
+
+
   return (
       <div className="header__message__section">
+        {modalIsOpen && (
+          <div className="backdrop-blur">
+          <div className="header__message__socials--mobile">
+            <span onClick={handleCloseModal} className="close-icon close-button">×</span>
+            <div className="header__btns__mobile">
+              <a href="tel:+79923489131">
+                <img src={phone} alt="phone" />
+              </a>
+              <a href="mailto:desewre@yandex.ru">
+                <img src={mail} alt="mail" />
+              </a>
+              <a target="_blank" rel="noopener noreferrer" href="https://vk.com/pierrie">
+                <img src={vk} alt="vk" />
+              </a>
+              <a target="_blank" rel="noopener noreferrer" href="https://t.me/pierrrie">
+                <img src={telegram} alt="telegram" />
+              </a>
+            </div>
+          </div>
+        </div>
+        )}
         <div className={`header__message__inner ${btnIsOpen ? 'active' : ''}`}>
           <div className="header__message__socials">
-            <button name="phone">
-              <img src={phone} alt="phone" />
-            </button>
-            <button name="mail">
+            <a href="tel:+79923489131">
+                <img src={phone} alt="phone" />
+            </a>
+            <a href="mailto:desewre@yandex.ru">
               <img src={mail} alt="mail" />
-            </button>
-            <button name="vk">
+            </a>
+            <a target="_blank" rel="noopener noreferrer" href="https://vk.com/pierrie">
               <img src={vk} alt="vk" />
-            </button>
-            <button name="telegram">
+            </a>
+            <a target="_blank" rel="noopener noreferrer" href="https://t.me/pierrrie">
               <img src={telegram} alt="telegram" />
-            </button>
+            </a>
           </div>
           <div className="header__message">
             {!btnIsOpen ? (
@@ -43,6 +75,11 @@ function HeaderMessage() {
             )}
           </div>
         </div>
+        <div className="header__message header__message--mobile" onClick={handleModalToggle}>
+              <button>
+                  <img src={message} alt="Соц сети" />
+              </button>
+          </div>
       </div>
   );
 }

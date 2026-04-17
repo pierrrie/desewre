@@ -4,6 +4,7 @@ import phone from "../../image/phone.svg";
 import mail from "../../image/mail.svg";
 import telegram from "../../image/telegram.svg";
 import sms from "../../image/sms.svg";
+import { Link } from 'react-router-dom';
 
 function Footer() {
   const currentYear = new Date().getFullYear();
@@ -23,8 +24,8 @@ function Footer() {
               <div className="footer__contact">
                 <div className="footer__number">
                   <img src={phone} alt="" aria-hidden="true" />
-                  <a href="tel:+78005117468" aria-label="Позвонить по номеру +7 800 511-74-68">
-                    +7 (800) 511-74-68
+                  <a href="tel:+79923489131" aria-label="Позвонить по номеру +7 800 511-74-68">
+                    +7 (992) 348-91-31
                   </a>
                 </div>
                 <div className="footer__number">
@@ -42,7 +43,7 @@ function Footer() {
                 <h3 className="footer__list--title">Разделы</h3>
                 <ul>
                   <li><a href="/" aria-label="Перейти на главную страницу">Главная</a></li>
-                  <li><a href="/about" aria-label="Перейти на страницу о компании">О нас</a></li>
+                  <li><a href="#about" aria-label="Перейти на страницу о компании">О нас</a></li>
                   <li><a href="/cases" aria-label="Перейти к кейсам">Кейсы</a></li>
                   <li><a href="/services" aria-label="Перейти к услугам">Услуги</a></li>
                 </ul>
@@ -57,8 +58,9 @@ function Footer() {
               <div className="footer__info--list">
                 <h3 className="footer__list--title">Информация</h3>
                 <ul>
-                  <li><a href="/privacy-policy" aria-label="Перейти к политике конфиденциальности">Политика конфиденциальности</a></li>
-                  <li><a href="/user-agreement" aria-label="Перейти к пользовательскому соглашению">Пользовательское соглашение</a></li>
+                  <li><Link to="/privacy-policy" aria-label="Перейти к политике конфиденциальности">Политика конфиденциальности</Link></li>
+                  <li><Link to="/user-agreement" aria-label="Перейти к пользовательскому соглашению">Пользовательское соглашение</Link></li>
+                  <li><Link to="/data-processing-consent" aria-label="Перейти к согласию на обработку персональных данных">Согласие на обработку персональных данных</Link></li>
                 </ul>
               </div>
             </nav>
@@ -69,10 +71,9 @@ function Footer() {
             <hr aria-hidden="true" />
             <div className="footer__btn__socials">
               <a 
-                href="https://t.me/desewreweb" 
+                href="https://t.me/pierrrie" 
                 target="_blank" 
                 rel="noopener noreferrer nofollow"
-                aria-label="Наш канал в Telegram"
               >
                 <img src={telegram} alt="Telegram" />
               </a>

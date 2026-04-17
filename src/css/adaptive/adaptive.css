@@ -60,11 +60,11 @@
         font-size: 18px;
     }
     .card {
-        width: 350px;
+        width: 350px !important;
         height: 520px;
     }
     .services__btn {
-        font-size: 18px;
+        font-size: 18px !important;
     }
 }
 
@@ -85,7 +85,7 @@
         font-size: 70px;
     }
     .services__title {
-        font-size: 70px;
+        font-size: 70px ;
     }
     .cases__title {
         font-size: 70px;
@@ -113,23 +113,23 @@
         font-size: 18px;
     }
     .card {
-        width: 300px;
-        height: 430px;
+        width: 300px !important;
+        height: 430px !important;
     }
     .services__btn {
         font-size: 18px;
     }
     .card__title--text {
-        font-size: 20px;
+        font-size: 20px !important;
     }
     .card__content {
-        margin-top: 15px;
+        margin-top: 15px !important;
     }
     .card__content p {
-        font-size: 14px;
+        font-size: 14px !important;
     }
     .card-front, .card-back {
-        padding: 20px;
+        padding: 20px !important;
     }
 }
 
@@ -139,30 +139,30 @@
         font-size: 18px;
     }
     .card {
-        width: 250px;
-        height: 410px;
+        width: 250px !important;
+        height: 410px !important;
     }
     .services__btn {
         font-size: 18px;
     }
     .card__title--text {
-        font-size: 18px;
+        font-size: 18px !important;
     }
     .card__list, .card__utp {
-        font-size: 14px;
+        font-size: 14px !important;
     }
     .card__content {
-        margin-top: 15px;
-        gap: 10px;
+        margin-top: 15px !important;
+        gap: 10px !important;
     }
     .card__content p {
-        font-size: 12px;
+        font-size: 12px !important;
     }
     .card-front, .card-back {
-        padding: 20px;
+        padding: 20px !important;
     }
     .card__title img {
-        width: 25px;
+        width: 25px !important;
     }
     .services__inner {
         gap: 30px;
@@ -230,33 +230,33 @@
         font-size: 18px;
     }
     .card {
-        width: 350px;
-        height: 400px;
+        width: 350px !important;
+        height: 400px !important;
     }
     .services__btn {
         font-size: 18px;
     }
     .card__title--text {
-        font-size: 18px;
+        font-size: 18px !important;
     }
     .card__list, .card__utp {
-        font-size: 16px;
+        font-size: 16px !important;
     }
     .card__content {
-        margin-top: 15px;
-        gap: 10px;
+        margin-top: 15px !important;
+        gap: 10px !important;
     }
     .card__content p {
-        font-size: 14px;
+        font-size: 14px !important;
     }
     .card-front, .card-back {
-        padding: 25px;
+        padding: 25px !important;
     }
     .card__title img {
-        width: 35px;
+        width: 35px !important;
     }
     .card__title {
-        align-items: center;
+        align-items: center !important;
     }
     .services__inner {
         gap: 70px;
@@ -324,8 +324,8 @@
         position: absolute;
         flex-direction: column;
         gap: 6px;
-        right: 40px;
-        top: 40px;
+        right: 0px;
+        top: 70px;
         cursor: pointer;
         transition: all .3s ease;
         border-radius: 50px;
@@ -346,8 +346,8 @@
     .header__menu--mobile__close {
         position: fixed;
         z-index: 1000;
-        right: 40px;
-        top: 40px;
+        right: 45px;
+        top: 70px;
         width: 24px;
         height: 24px;
         cursor: pointer;
@@ -490,8 +490,166 @@
     .footer__img a img {
         max-width: 100px;
     }
+    .header__message__inner.active {
+        width: 350px;
+    }
+    .header__message__socials a {
+        width: 45px;
+        height: 45px;
+    }
+    .header__message__socials {
+        gap: 10px;
+    }
+    .header__message__socials a img {
+        width: 25px;
+        height: 25px;
+    }
+}
+@media (max-width: 780px) {
+    .btn__Close {
+        width: 70px !important;
+        height: 70px !important;
+    }
+    .header__message__inner.active {
+        width: 320px;
+        padding-left: 0;
+        height: 70px;
+    }
+}
+@media (max-width: 750px) {
+    .header__btns__mobile {
+        display: flex;
+        gap: 20px;
+    }
+    .header__message--mobile {
+        display: block;
+    }
+    .header__message__inner {
+        display: none;
+    }
+    /* Для затемнения и размытия фона */
+    .backdrop-blur {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный черный */
+    backdrop-filter: blur(5px); /* Размытие фона */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Чтобы было поверх других элементов */
+    }
+
+    /* Для центрирования блока */
+    .header__message__socials--mobile {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    gap: 15px; /* Расстояние между кнопками */
+    padding: 40px;
+    background-color:#1E1E1E; /* Или любой другой цвет фона блока */
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    z-index: 1001; /* Чтобы был выше backdrop */
+    }
+    .header__message__socials--mobile a {
+        background-color: transparent;
+        border: 1px solid white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 70px;
+        height: 70px;
+    }
+    .header__message__socials--mobile .close-button {
+        top: 0;
+        right: 0;
+    }
+    .header__message__socials--mobile a img {
+        width: 30px;
+    }
+}
+@media (max-width: 450px) {
+    .header__message__socials--mobile {
+        padding: 40px;
+    }
+    .header__message__socials--mobile a {
+        width: 50px;
+        height: 50px;
+    }
+    .header__message__socials--mobile a img {
+        width: 20px;
+        height: 20px;
+    }
+}
+@media (max-width: 375px) {
+    .header__message__socials--mobile {
+        padding: 40px;
+    }
+    .header__message__socials--mobile a {
+        width: 50px;
+        height: 50px;
+    }
+    .header__message__socials--mobile a img {
+        width: 20px;
+        height: 20px;
+    }
+    .header__btns__mobile {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
 }
 
+@media (max-width: 540px) {
+    .header__message--mobile a {
+        width: 70px;
+        height: 70px;
+    }
+    .header__message--mobile a img {
+        width: 30px;
+    }
+    @keyframes message {
+        0% {
+            width: 70px;
+            height: 70px;
+            opacity: 0.9;
+        }
+        50% {
+            width: 100px;
+            height: 100px;
+            opacity: 0;
+        }
+        100% {
+            width: 120px;
+            height: 120px;
+            opacity: 0;
+        }
+    }
+    .btn-text {
+        font-size: 16px;
+    }
+}
+@media (max-width: 400px) {
+    .btn-text {
+        font-size: 14px !important;
+    }
+    .services__btn img {
+        width: 50px !important;
+    }
+}
+@media (max-width: 350px) {
+    .btn-text {
+        font-size: 12px !important;
+    }
+    .services__btn img {
+        width: 40px !important;
+    }
+}
 /* 850px */
 @media (max-width: 850px) {
     .cases__card {
@@ -524,39 +682,42 @@
     }
 }
 
-/* 800px */
-@media (max-width: 800px) {
+@media (max-width: 1100px) {
     .services__description {
         font-size: 18px;
     }
+    .WebService__card {
+        display: flex;
+        justify-content: center;
+    }
     .card {
-        width: 350px;
-        height: 390px;
+        width: 350px !important;
+        height: 390px !important;
     }
     .services__btn {
         font-size: 18px;
     }
     .card__title--text {
-        font-size: 18px;
+        font-size: 18px !important;
     }
     .card__list, .card__utp {
-        font-size: 16px;
+        font-size: 16px !important;
     }
     .card__content {
-        margin-top: 15px;
-        gap: 10px;
+        margin-top: 15px !important;
+        gap: 10px !important;
     }
     .card__content p {
-        font-size: 14px;
+        font-size: 14px !important;
     }
     .card-front, .card-back {
-        padding: 25px;
+        padding: 25px !important;
     }
     .card__title img {
-        width: 35px;
+        width: 35px !important;
     }
     .card__title {
-        align-items: center;
+        align-items: center !important;
     }
     .services__inner {
         gap: 70px;
@@ -575,6 +736,202 @@
     .logo-footer {
         display: none;
     }
+    
+    /* Адаптивность для страниц услуг */
+    .WebService__title h1 {
+        font-size: 50px;
+    }
+    .WebService__title p {
+        font-size: 18px;
+        margin-top: 30px;
+        max-width: 100%;
+    }
+    .WebService__top {
+        flex-direction: column;
+        gap: 50px;
+    }
+    .WebServices__bottom {
+        flex-direction: column;
+        gap: 50px;
+        margin-top: 80px;
+    }
+    .WebServices__bottom__title {
+        font-size: 50px;
+        max-width: 100%;
+    }
+    .WebServices__bottom__content {
+        flex-direction: column;
+        gap: 20px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    .WebServices__content__text {
+        max-width: 100%;
+    }
+    .WebService__inner .formMain {
+        margin-top: 80px;
+    }
+}
+
+/* 1600px */
+@media (max-width: 1600px) {
+    /* Адаптивность для страниц услуг */
+    .WebService__title h1 {
+        font-size: 70px;
+    }
+    .WebService__title p {
+        font-size: 19px;
+        margin-top: 45px;
+        max-width: 800px;
+    }
+    .WebServices__bottom__title {
+        font-size: 70px;
+    }
+    .WebServices__bottom {
+        margin-top: 120px;
+        gap: 70px;
+    }
+    .WebService__inner .formMain {
+        margin-top: 120px;
+    }
+}
+
+/* 1500px */
+@media (max-width: 1500px) {
+    /* Адаптивность для страниц услуг */
+    .WebService__title h1 {
+        font-size: 65px;
+    }
+    .WebService__title p {
+        font-size: 19px;
+        margin-top: 45px;
+        max-width: 750px;
+    }
+    .WebServices__bottom__title {
+        font-size: 65px;
+    }
+    .WebServices__bottom {
+        margin-top: 110px;
+        gap: 65px;
+    }
+    .WebService__inner .formMain {
+        margin-top: 110px;
+    }
+}
+
+/* 1400px */
+@media (max-width: 1400px) {
+    /* Адаптивность для страниц услуг */
+    .WebService__title h1 {
+        font-size: 60px;
+    }
+    .WebService__title p {
+        font-size: 18px;
+        margin-top: 40px;
+        max-width: 700px;
+    }
+    .WebServices__bottom__title {
+        font-size: 60px;
+    }
+    .WebServices__bottom {
+        margin-top: 100px;
+        gap: 60px;
+    }
+    .WebService__inner .formMain {
+        margin-top: 100px;
+    }
+}
+
+/* 1300px */
+@media (max-width: 1300px) {
+    /* Адаптивность для страниц услуг */
+    .WebService__title h1 {
+        font-size: 55px;
+    }
+    .WebService__title p {
+        font-size: 18px;
+        margin-top: 40px;
+        max-width: 650px;
+    }
+    .WebServices__bottom__title {
+        font-size: 55px;
+    }
+    .WebServices__bottom {
+        margin-top: 90px;
+        gap: 55px;
+    }
+    .WebService__inner .formMain {
+        margin-top: 90px;
+    }
+}
+
+/* 1200px */
+@media (max-width: 1200px) {
+    /* Адаптивность для страниц услуг */
+    .WebService__title h1 {
+        font-size: 50px;
+    }
+    .WebService__title p {
+        font-size: 17px;
+        margin-top: 35px;
+        max-width: 600px;
+    }
+    .WebServices__bottom__title {
+        font-size: 50px;
+    }
+    .WebServices__bottom {
+        margin-top: 80px;
+        gap: 50px;
+    }
+    .WebService__inner .formMain {
+        margin-top: 80px;
+    }
+}
+
+/* 1100px */
+@media (max-width: 1100px) {
+    /* Адаптивность для страниц услуг */
+    .WebService__title h1 {
+        font-size: 45px;
+    }
+    .WebService__title p {
+        font-size: 17px;
+        margin-top: 35px;
+        max-width: 550px;
+    }
+    .WebServices__bottom__title {
+        font-size: 45px;
+    }
+    .WebServices__bottom {
+        margin-top: 70px;
+        gap: 45px;
+    }
+    .WebService__inner .formMain {
+        margin-top: 70px;
+    }
+}
+
+/* 1000px */
+@media (max-width: 1000px) {
+    /* Адаптивность для страниц услуг */
+    .WebService__title h1 {
+        font-size: 40px;
+    }
+    .WebService__title p {
+        font-size: 16px;
+        margin-top: 30px;
+        max-width: 500px;
+    }
+    .WebServices__bottom__title {
+        font-size: 40px;
+    }
+    .WebServices__bottom {
+        margin-top: 60px;
+        gap: 40px;
+    }
+    .WebService__inner .formMain {
+        margin-top: 60px;
+    }
 }
 
 /* 768px */
@@ -585,6 +942,78 @@
     }
     .about__description__h1 {
         font-size: 35px;
+    }
+    
+    /* Адаптивность для страниц услуг */
+    .WebService__title h1 {
+        font-size: 40px;
+    }
+    .WebService__title p {
+        font-size: 16px;
+        margin-top: 25px;
+    }
+    .WebServices__bottom__title {
+        font-size: 40px;
+    }
+    .WebServices__content__title {
+        font-size: 20px;
+    }
+    .WebServices__bottom {
+        margin-top: 60px;
+        gap: 40px;
+    }
+    .WebService__inner .formMain {
+        margin-top: 60px;
+    }
+}
+
+/* 600px */
+@media (max-width: 600px) {
+    /* Адаптивность для страниц услуг */
+    .WebService__title h1 {
+        font-size: 35px;
+    }
+    .WebService__title p {
+        font-size: 16px;
+        margin-top: 20px;
+    }
+    .WebServices__bottom__title {
+        font-size: 35px;
+    }
+    .WebServices__content__title {
+        font-size: 18px;
+    }
+    .WebServices__bottom {
+        margin-top: 50px;
+        gap: 30px;
+    }
+    .WebService__inner .formMain {
+        margin-top: 50px;
+    }
+}
+
+/* 480px */
+@media (max-width: 480px) {
+    /* Адаптивность для страниц услуг */
+    .WebService__title h1 {
+        font-size: 30px;
+    }
+    .WebService__title p {
+        font-size: 14px;
+        margin-top: 15px;
+    }
+    .WebServices__bottom__title {
+        font-size: 30px;
+    }
+    .WebServices__content__title {
+        font-size: 16px;
+    }
+    .WebServices__bottom {
+        margin-top: 40px;
+        gap: 25px;
+    }
+    .WebService__inner .formMain {
+        margin-top: 40px;
     }
 }
 
@@ -770,33 +1199,33 @@
         font-size: 18px;
     }
     .card {
-        width: 300px;
-        height: 390px;
+        width: 300px !important;
+        height: 390px !important;
     }
     .services__btn {
         font-size: 18px;
     }
     .card__title--text {
-        font-size: 18px;
+        font-size: 18px !important ;
     }
     .card__list, .card__utp {
-        font-size: 14px;
+        font-size: 14px !important;
     }
     .card__content {
-        margin-top: 15px;
-        gap: 10px;
+        margin-top: 15px !important;
+        gap: 10px !important;
     }
     .card__content p {
-        font-size: 12px;
+        font-size: 12px !important;
     }
     .card-front, .card-back {
-        padding: 25px;
+        padding: 25px !important;
     }
     .card__title img {
-        width: 35px;
+        width: 35px !important;
     }
     .card__title {
-        align-items: center;
+        align-items: center !important;
     }
     .services__inner {
         gap: 70px;
@@ -898,8 +1327,8 @@
         padding-left: 20px;
     }
     .card {
-        width: 250px;
-        height: 390px;
+        width: 250px !important;
+        height: 390px !important;
     }
     .services__cards {
         grid-template-columns: repeat(1, 250px);
@@ -907,10 +1336,10 @@
         justify-content: center;
     }
     .card__title--text {
-        font-size: 16px;
+        font-size: 16px !important;
     }
     .card-front, .card-back {
-        padding: 15px;
+        padding: 15px !important;
     }
 }
 
@@ -971,5 +1400,210 @@
     .header__overlay,
     .header__menu__nav__mobile {
         display: none !important;
+    }
+}
+@media (max-width: 1500px) {
+    .formLid__inner {
+        max-height: 600px;
+    }
+    .policyForm {
+        margin-top: 30px;
+    }
+    .lidFormButton {
+        padding: 20px !important;
+    }
+}
+@media (max-width: 1300px) {
+    .formLid__inner {
+        max-height: 500px;
+    }
+    .form__title {
+        font-size: 20px;
+    }
+    .form__btns {
+        margin-top: 10px;
+    }
+    .form__btns button {
+        padding: 10px;
+    }
+    .form__btns {
+        gap: 10px;
+    }
+    .lidForm {
+        margin-top: 20px;
+    }
+    
+}
+@media (max-width: 1400px) {
+    .formLid__title {
+        font-size: 50px;
+        max-width: 500px;
+    }
+}
+@media (max-width: 1300px) {
+    .formLid__title {
+        font-size: 40px;
+        max-width: 400px;
+    }
+}
+@media (max-width: 1200px) {
+    .formLid__title {
+        font-size: 30px;
+        max-width: 300px;
+    }
+    .formLid__links a {
+        font-size: 20px;
+    }
+    .formLid__form {
+        max-width: 500px;
+    }
+    .formLid__inner {
+        gap: 80px;
+    }
+    .lidForm input::placeholder {
+        font-size: 15px;
+    }
+    .policyForm {
+        font-size: 15px;
+    }
+}
+@media (max-width: 1000px) {
+    .formLid__form {
+        max-width: 300px;
+    }
+    .tel__mobile {
+        display: block;
+    }
+    .tel__desktop {
+        display: none;
+    }
+    .form__btns button {
+        padding: 5px 10px;
+        font-size: 10px;
+    }
+    .policyForm {
+        font-size: 12px;
+    }
+    .form__title {
+        font-size: 18px;
+    }
+    .policyForm {
+        margin-top: 0px;
+    }
+}
+@media (max-width: 800px) {
+    .formLid__inner {
+        flex-direction: column;
+        overflow-y: scroll;
+        max-height: 550px;
+    }
+    .formLid__text {
+        gap: 30px;
+    }
+    .policyForm {
+        margin-top: 30px;
+    }
+}
+@media (max-width: 420px) {
+    .formLid__form {
+        max-width: 200px;
+    }
+    .formLid__title {
+        font-size: 20px;
+        max-width: 200px;
+    }
+    .formLid__links {
+        max-width: 200px;
+        gap: 10px;
+    }
+    .formLid__links a {
+        font-size: 16px;
+    }
+    .formLid__inner {
+        gap: 40px;
+    }
+    .policyForm {
+        font-size: 10px;
+        gap: 10px;
+    }
+    .policyFormInput input[type="checkbox"]:checked::after {
+        width: 10px;
+        height: 10px;
+    }
+    .policyFormInput input[type="checkbox"] {
+        width: 20px;
+        height: 20px;
+    }
+    .form__btns button {
+        padding: 5px 5px;
+        font-size: 9px;
+    }
+    .form__btns {
+        gap: 5px;
+    }
+}
+
+@media (max-width: 655px) {
+    .WebService__card {
+        display: none !important;
+    }
+}
+@media (max-width: 800px) {
+    .contacts__Form .formLid__inner {
+        overflow-y: visible;
+        max-height: none;
+        height: auto;
+    }
+    .contacts__Form {
+        margin-bottom: 100px;
+        display: flex;
+        justify-content: center;
+    }  
+}
+@media (max-width: 440px) {
+    .contacts h1 {
+        font-size: 50px;
+    }
+    .cases__pages__title h1 {
+        font-size: 50px;
+    }
+}
+@media (max-width: 1300px) {
+    .services__pages__card {
+        flex-direction: column;
+        gap: 50px;
+    }
+    .services__pages__card--title button {
+        margin-top: 50px;
+    }
+    .services__pages__card-reverse {
+        align-items: end;
+    }
+}
+@media (max-width: 1400px) {
+    .services__pages__card .card__title--text {
+        font-size: 30px;
+    }
+    .services__pages__card .card__title img {
+        width: 35px;
+    }
+    .services__pages__card .card__list {
+        font-size: 20px;
+    }
+    .services__pages__card .card__utp {
+        font-size: 20px;
+    }
+    .services__pages__card .card__content p {
+        font-size: 16px;
+    }
+}
+@media (max-width: 540px) {
+    .services__pages__card--text span {
+        font-size: 40px;
+    }
+}
+@media (max-width: 370px) {
+    .services__pages__card--text span {
+        font-size: 30px;
     }
 }

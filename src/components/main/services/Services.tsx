@@ -3,10 +3,11 @@ import design from "../../../image/design.svg";
 import support from "../../../image/support.svg";
 import seo from "../../../image/seo.svg";
 import Btn from "../../btn/btnShow";
-import marketing from "../../../image/web.svg";
-import mobile from "../../../image/web.svg";
-import content from "../../../image/web.svg";
-import automation from "../../../image/web.svg";
+import { Link } from "react-router-dom"
+// import marketing from "../../../image/web.svg";
+// import mobile from "../../../image/web.svg";
+// import content from "../../../image/web.svg";
+// import automation from "../../../image/web.svg";
 
 interface onOpen {
   onOpen: () => void;
@@ -14,7 +15,7 @@ interface onOpen {
 
 function Services({ onOpen }: onOpen) {
   return (
-    <section className="services">
+    <section className="services" id="services">
       <div className="services__inner">
         <div className="services__content">
           <h2 className="services__title">Услуги</h2>
@@ -22,7 +23,9 @@ function Services({ onOpen }: onOpen) {
             Мы используем последние технологии и методы, чтобы обеспечить нашим
             клиентам максимальное качество и результативность.
           </p>
-          <Btn>Посмотреть все услуги</Btn>
+          <Link to="/services">
+            <Btn>Посмотреть все услуги</Btn>
+          </Link>
         </div>
         <div className="services__cards">
           {/* Web-разработка карточка */}
@@ -168,7 +171,7 @@ function Services({ onOpen }: onOpen) {
           </div>
 
           {/* Интернет-маркетинг карточка */}
-          <div className="card">
+          {/* <div className="card">
             <div className="card-inner">
               <div className="card-front">
                 <div className="card__title">
@@ -215,7 +218,7 @@ function Services({ onOpen }: onOpen) {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
 
           {/* Мобильная разработка карточка */}
           {/* <div className="card">
@@ -315,7 +318,7 @@ function Services({ onOpen }: onOpen) {
           </div> */}
 
           {/* Техническая поддержка карточка */}
-          {/* <div className="card">
+          <div className="card">
             <div className="card-inner">
               <div className="card-front">
                 <div className="card__title">
@@ -361,7 +364,7 @@ function Services({ onOpen }: onOpen) {
                 </div>
               </div>
             </div>
-          </div> */}
+          </div>
 
           {/* Автоматизация бизнеса карточка */}
           {/* <div className="card">
